@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1525140834386.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2259061944",
+    "id" : "F818F023",
+    "lastKnownWriteTime" : 1525252447,
+    "last_content_update" : 1525252447935,
+    "path" : "C:/Users/806913/Desktop/Stock/Stock/123/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "cursorPosition" : "30,12",
+        "scrollLine" : "21"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

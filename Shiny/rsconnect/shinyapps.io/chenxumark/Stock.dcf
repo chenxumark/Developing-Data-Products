@@ -1,0 +1,10 @@
+name: Stock
+title:
+username:
+account: chenxumark
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 335620
+bundleId: 1351138
+url: https://chenxumark.shinyapps.io/Stock/
+when: 1525253608.2403

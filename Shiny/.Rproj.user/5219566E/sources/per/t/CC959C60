@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1525140841936.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3376374479",
+    "id" : "CC959C60",
+    "lastKnownWriteTime" : 1525140496,
+    "last_content_update" : 1525140496,
+    "path" : "C:/Users/806913/Desktop/Stock/Stock/123/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "cursorPosition" : "58,45",
+        "scrollLine" : "48"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
