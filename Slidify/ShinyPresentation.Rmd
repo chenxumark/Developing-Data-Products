@@ -1,0 +1,72 @@
+---
+title: "Shiny Application and Reproducible Pitch"
+author: "Chen Xu"
+date: "MAY 3, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## About the Course Project
+
+This is a deliverable for the course Developing Data Products as part of the Coursera Data Science Specialization.
+
+Instructions:
+
+Write a shiny application with associated supporting documentation. The documentation should be thought of as whatever a user will need to get started using your application.
+Deploy the application on Rstudio's shiny server
+Share the application link by pasting it into the provided text box
+Share your server.R and ui.R code on github
+
+## How to use the application
+
+Using the data of stock information containing 5 industry giants, we plot the tendency of the stocks and correlation between each stock.
+
+The application is running on (https://chenxumark.shinyapps.io/Stock/)
+
+ui.R, and Server.R Code in my github repository (https://github.com/chenxumark/Developing-Data-Products)
+
+## Stock Dataset from Rawgit
+
+The data used in the app comes from the Rawgit websit.
+
+```{r echo = TRUE}
+stockdata <- read.csv("https://cdn.rawgit.com/plotly/datasets/master/stockdata.csv")
+summary(stockdata)
+```
+
+## Plot
+```{r echo=FALSE,message = FALSE}
+    library(plotly)
+  # Create dates
+  stockdata$Date <- as.Date(stockdata$Date)
+  
+  # Reshape
+  ds <- reshape2::melt(stockdata, id = "Date")
+  ds <- filter(ds, variable != "GSPC")
+  
+  # Set some colors
+  plotcolor <- "#F5F1DA"
+  papercolor <- "#E3DFC8"
+  
+p <- plot_ly(source = "source") %>% 
+      add_lines(data = ds, x = ~Date, y = ~value, color = ~variable, mode = "lines", line = list(width = 3))
+    
+    # Add SP500
+    p <- p %>%
+      add_lines(data = stockdata, x = ~Date, y = ~GSPC, mode = "lines", yaxis = "y2", name = "SP500", opacity = 0.3,
+                line = list(width = 5)) %>% 
+      layout(title = "Stock prices for different stocks overlaid with SP500",
+             xaxis = list(title = "Dates", gridcolor = "#bfbfbf", domain = c(0, 0.98)),
+             yaxis = list(title = "Stock Price", gridcolor = "#bfbfbf"), 
+             plot_bgcolor = plotcolor,
+             paper_bgcolor = papercolor, 
+             yaxis2 = list(title = "SP500", side = "right", overlaying = "y"))
+```
+
+```{r pressure}
+    p
+```
+
